@@ -14,6 +14,7 @@ public class PasswordValidatorTest{
         }
 
         // --- เขียน Test Case อื่นๆ ต่อ ---
+        // Test Case 2: รหัสผ่าน8ตัวควรจะ WEAK
         PasswordStrength result2 =PasswordValidator.validate("asdxcvbg");
         if (result2 == PasswordStrength.WEAK) {
             System.out.println("Test Case 2 Passed: Short password is WAKE.");
@@ -21,14 +22,14 @@ public class PasswordValidatorTest{
             System.out.println("Test Case 2 FAILED: Expected INVALID but got " + result2);
         }
 
-
+        // Test Case 3: รหัสผ่านมีตัวอักษตรตัวใหญ่และตัวเล็ก ควรจะ MEDIUM
         PasswordStrength result3 =PasswordValidator.validate("zxcvb123");
         if (result3 == PasswordStrength.MEDIUM) {
             System.out.println("Test Case 3 Passed: Short password is MEDIUM.");
         } else {
             System.out.println("Test Case 3 FAILED: Expected INVALID but got " + result3);
         }
-
+        // Test Case 4: รหัสผ่านมีตัวอักษตรตัวใหญ่และตัวเล็กและอักษรพิเศษ ควรจะ STRONG
          PasswordStrength result4 =PasswordValidator.validate("zxC123*/");
         if (result4 == PasswordStrength.STRONG) {
             System.out.println("Test Case 4 Passed: Short password is STRONG.");
