@@ -14,6 +14,30 @@ public class PasswordValidatorTest{
         }
 
         // --- เขียน Test Case อื่นๆ ต่อ ---
+        PasswordStrength result2 =PasswordValidator.validate("asdxcvbg");
+        if (result2 == PasswordStrength.WEAK) {
+            System.out.println("Test Case 2 Passed: Short password is WAKE.");
+        } else {
+            System.out.println("Test Case 2 FAILED: Expected INVALID but got " + result2);
+        }
+
+
+        PasswordStrength result3 =PasswordValidator.validate("zxcvb123");
+        if (result3 == PasswordStrength.MEDIUM) {
+            System.out.println("Test Case 3 Passed: Short password is MEDIUM.");
+        } else {
+            System.out.println("Test Case 3 FAILED: Expected INVALID but got " + result3);
+        }
+
+         PasswordStrength result4 =PasswordValidator.validate("zxC123*/");
+        if (result4 == PasswordStrength.STRONG) {
+            System.out.println("Test Case 4 Passed: Short password is STRONG.");
+        } else {
+            System.out.println("Test Case 4 FAILED: Expected INVALID but got " + result4);
+        }
+
+
+
 
         System.out.println("--------------------------------");
     }
