@@ -36,10 +36,6 @@ public class PasswordValidatorTest{
         } else {
             System.out.println("Test Case 4 FAILED: Expected INVALID but got " + result4);
         }
-
-
-
-
         System.out.println("--------------------------------");
     }
 }
